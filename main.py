@@ -14,11 +14,13 @@ for linie in date_intrare:
     linie = linie.split()
     if len(linie) > 2:
         automat[tuple([linie[0], linie[1]])] = linie[2]
-    if len(linie) == 2:
-        for stare_finala in linie:
-            starifinale.append(stare_finala)
-    if len(linie) == 1:
-        cuvinte.append(linie[0])
+    try:
+        if linie[1][0] == 'q' or (len(linie) == 1):
+            for stare_finala in linie:
+                starifinale.append(stare_finala)
+    except:
+        if len(linie) == 1:
+            cuvinte.append(linie[0])
 
 # ce bag in stari     [stare actuala, cuvant actual, traseu pana acum]
 for cuvant in cuvinte:
@@ -47,4 +49,4 @@ for cuvant in cuvinte:
                 Q.pop(0)
 
     if solutie == False:
-        print("N-avem solutie")
+        print("Rejected")
