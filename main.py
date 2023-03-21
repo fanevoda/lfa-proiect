@@ -32,10 +32,6 @@ for linie in date_intrare:
                 cuvinte.append(linie[0])
 
 
-starifinale = ['q3']
-print(automat)
-print(starifinale)
-
 # ce bag in stari     [stare actuala, cuvant actual, traseu pana acum]
 for cuvant in cuvinte:
     Q = [['q0', cuvant, []]]
